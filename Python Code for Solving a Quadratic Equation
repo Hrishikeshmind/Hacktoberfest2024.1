@@ -1,0 +1,32 @@
+import math
+
+def solve_quadratic(a, b, c):
+   
+    discriminant = b**2 - 4*a*c
+    
+   
+    if discriminant > 0:
+        root1 = (-b + math.sqrt(discriminant)) / (2 * a)
+        root2 = (-b - math.sqrt(discriminant)) / (2 * a)
+        return f"Two real solutions: x1 = {root1}, x2 = {root2}"
+    
+   
+    elif discriminant == 0:
+        root = -b / (2 * a)
+        return f"One real solution: x = {root}"
+    
+    
+    else:
+        real_part = -b / (2 * a)
+        imaginary_part = math.sqrt(-discriminant) / (2 * a)
+        return f"Two complex solutions: x1 = {real_part} + {imaginary_part}i, x2 = {real_part} - {imaginary_part}i"
+
+
+if __name__ == "__main__":
+    # Coefficients for the quadratic equation ax^2 + bx + c = 0
+    a = 1
+    b = -3
+    c = 2
+    
+    result = solve_quadratic(a, b, c)
+    print(result)
